@@ -1,5 +1,6 @@
 # Smart-Traffic-Signaling-System-Using-Arduino
 Metropolitan traffic control system using IOT techniques 
+
 #Abstract:
 The project is designed to develop a density based dynamic traffic signal system. The signal
 timing changes automatically on sensing the traffic density at the junction. Traffic congestion is
