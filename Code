@@ -1,0 +1,114 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12,11,2,3,4,5);   
+int red=7;
+int yellow=8;
+int green=9;
+int n=30;
+int k=20;
+int l=10;
+int m=5;
+void setup() {
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
+  pinMode(9,OUTPUT);
+  Serial.begin(9600);
+  lcd.begin(16,1);
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  //IR SENSORS
+  Serial.print("p     :");
+  int p = (analogRead(A0));
+  Serial.println(p);
+  Serial.print("q    :");
+  int q =  (analogRead(A1));
+  Serial.println(q);
+   //Serial.print("r     :");
+  int r =  (analogRead(A2));
+  //Serial.println(r);
+   //]
+   
+   Serial.print("s     :");
+  int s = (analogRead(A3));
+  //Serial.println(s);
+
+  if( p<500 & q<500 & r<500 & s<500)
+  {
+    digitalWrite(9,HIGH);
+    while(n>0)
+    {
+      lcd.setCursor(0,0);
+      lcd.print(n);
+      delay(1000);
+      lcd.clear();
+      n--;
+    }
+    digitalWrite(9,LOW);
+    digitalWrite(8,HIGH);
+    delay(500);
+    digitalWrite(8,LOW);
+    digitalWrite(7,HIGH);
+    delay(2000);
+    digitalWrite(7,LOW);
+  }
+   else if( p<500 & q<500 & r<500 & s>500)
+  {
+    digitalWrite(9,HIGH);
+    while(k>0)
+    {
+      lcd.setCursor(0,0);
+      lcd.print(k);
+      delay(1000);
+      lcd.clear();
+      k--;
+    }
+    digitalWrite(9,LOW);
+    digitalWrite(8,HIGH);
+    delay(500);
+    digitalWrite(8,LOW);
+    digitalWrite(7,HIGH);
+    delay(2000);
+    digitalWrite(7,LOW);
+  }
+   else if( p<500 & q<500 & r>500 & s>500)
+  {
+    digitalWrite(9,HIGH);
+    while(l>0)
+    {
+      lcd.setCursor(0,0);
+      lcd.print(l);
+      delay(1000);
+      lcd.clear();
+      l--;
+    }
+    digitalWrite(9,LOW);
+    digitalWrite(8,HIGH);
+    delay(500);
+    digitalWrite(8,LOW);
+    digitalWrite(7,HIGH);
+    delay(2000);
+    digitalWrite(7,LOW);
+  }
+     else if( p<500 & q >500 & r>500 & s>500)
+  {
+    digitalWrite(9,HIGH);
+    while(m>0)
+    {
+      lcd.setCursor(0,0);
+      lcd.print(m);
+      delay(1000);
+      lcd.clear();
+      m--;
+    }
+    digitalWrite(9,LOW);
+    digitalWrite(8,HIGH);
+    delay(500);
+    digitalWrite(8,LOW);
+    digitalWrite(7,HIGH);
+    delay(2000);
+    digitalWrite(7,LOW);
+  }
+
+}
