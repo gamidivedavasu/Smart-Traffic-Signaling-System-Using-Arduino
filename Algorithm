@@ -1,3 +1,4 @@
+#Algorithm
 Procedure Traffic_Control_System() {
 If (vehicle== emergency vehicle)
 {
